@@ -865,7 +865,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 @app.middleware("http")
 async def audit_failed_review_calls(request: Request, call_next: Any) -> Any:
     response = await call_next(request)
