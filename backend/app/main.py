@@ -844,13 +844,16 @@ def _metadata() -> dict[str, Any]:
     }
 
 
+
 app = FastAPI(title="ClearCredit Explainability API", version="1.0.0")
+
 # Set FRONTEND_ORIGINS to deployed frontend URL(s), comma-separated.
 _frontend_origins = [
     origin.strip().rstrip("/")
     for origin in os.getenv("FRONTEND_ORIGINS", "").split(",")
     if origin.strip()
 ]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=list(dict.fromkeys([
@@ -858,12 +861,14 @@ app.add_middleware(
         "http://127.0.0.1:5173",
         "http://localhost:5174",
         "http://127.0.0.1:5174",
+        "https://clearcredit-explainable-ai-om6q.vercel.app",
         *_frontend_origins,
     ])),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 @app.middleware("http")
 async def audit_failed_review_calls(request: Request, call_next: Any) -> Any:
