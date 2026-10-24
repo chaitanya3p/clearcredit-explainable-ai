@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+frontend/node_modules/
+frontend/dist/
+backend/reviews.db
+backend/audit.log.jsonl
+audit.log.jsonl
+reviews.db
+.pytest_cache/
+frontend/dist/
+frontend/node_modules/
+node_modules/
+assets/
