@@ -649,6 +649,12 @@ def _lime_explanation(
         for right in runs[index + 1:]
     ]
     fidelity = float(np.clip(getattr(explanation, "score", 0.0), 0.0, 1.0))
+    print("LIME_DIAGNOSTIC:", {
+    "lime_score": float(getattr(explanation, "score", 0.0)),
+    "local_prediction": explanation.local_pred.tolist(),
+    "model_prediction": predict_raw(raw_row.reshape(1, -1)).tolist(),
+    "num_features": len(feature_names),
+})
     top5_overlap = float(np.mean(overlap_scores))
     rank_correlation = float(np.clip(np.nan_to_num(np.nanmean(rank_scores), nan=0.0), 0.0, 1.0))
     chance_overlap = 0.56
