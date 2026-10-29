@@ -468,7 +468,7 @@ def _artifacts() -> tuple[Pipeline, LimeTabularExplainer, pd.DataFrame, dict[str
         categorical_names=categorical_names,
         class_names=["Decline", "Approve"],
         mode="classification",
-        discretize_continuous=True,
+        discretize_continuous=False,
         random_state=42,
     )
     return model, explainer, data, calibration, FEATURES, raw_training_matrix
