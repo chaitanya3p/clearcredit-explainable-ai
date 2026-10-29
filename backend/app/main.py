@@ -922,7 +922,7 @@ def session_condition(
     session_id: str,
     condition: Literal["prediction_only", "prediction_lime"] | None = None,
 ) -> dict[str, str]:
-    assigned = condition or _session_condition(session_id)
+    assigned = "prediction_lime"
     return {"session_id": session_id, "condition": assigned}
 
 
@@ -1012,8 +1012,8 @@ def decide(
     risk_band = "Low risk" if probability >= 0.7 else "Moderate risk" if probability >= 0.5 else "Higher risk"
     session_id = session_id or application.session_id
     case_id = case_id or application.case_id
-    condition = _session_condition(session_id) if session_id else None
-    gated = condition == "prediction_only"
+    condition = "prediction_lime" if session_id else None
+    gated = False
     items, reliability = ([], None) if gated else _lime_explanation(
         application, model, explainer, feature_names, transformed_training_data
     )
