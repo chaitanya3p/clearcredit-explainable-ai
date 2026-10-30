@@ -6,3 +6,115 @@
 .explanation-reliability{border-top:1px solid #edf0ed;margin-top:21px;padding-top:1px}.reliability-values{display:grid;grid-template-columns:1fr 1fr;gap:10px}.reliability-values span{background:#f7faf8;border-radius:7px;padding:10px;color:#71817a;font-size:11px}.reliability-values b{float:right;color:#2d8068;font:500 11px 'DM Mono',monospace}.reliability-warning{background:#fff5e5;border:1px solid #f1d9ad;border-radius:7px;padding:10px;color:#946d36;font-size:11px;line-height:1.45}
 .counterfactuals{border-top:1px solid #edf0ed;margin-top:21px;padding-top:1px}.counterfactual{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;border:1px solid #e4ece7;border-radius:8px;padding:11px;margin:9px 0;background:#fbfdfb}.counterfactual-change{display:flex;flex-direction:column;gap:4px;color:#62766e;font-size:11px;line-height:1.35}.counterfactual-change strong{color:#344e44}.counterfactual>b{color:#2d8068;font:500 11px 'DM Mono',monospace;white-space:nowrap}.no-counterfactual{color:#899690;font-size:11px;line-height:1.45}
 .record-actions{display:flex;gap:8px;margin-top:9px}.record-actions .secondary{margin-top:0;flex:1}.fairness-table{display:grid;gap:9px}.fairness-row{display:grid;grid-template-columns:1fr 1fr 1fr 1.2fr;gap:10px;align-items:center;border:1px solid #e4ece7;border-radius:8px;padding:12px;font-size:11px}.fairness-row span,.fairness-row small{color:#899690}.fairness-row b{color:#2d8068;font:500 11px 'DM Mono',monospace}.fairness-flag{margin:12px 0 0;padding:10px;background:#fff5e5;border:1px solid #f1d9ad;border-radius:7px;color:#946d36;font-size:11px}.proxy-row{display:flex;justify-content:space-between;border-bottom:1px solid #edf0ed;padding:10px 0;margin:0;color:#62766e;font-size:11px}.proxy-row span{font-family:'DM Mono',monospace;color:#2d8068}@media(max-width:520px){.record-actions{display:block}.record-actions .secondary{margin-top:8px}.fairness-row{grid-template-columns:1fr 1fr}}
+
+/* =========================================
+   CLEARCREDIT - SCREEN FIT / RESPONSIVENESS
+   Preserve existing colours and styling
+========================================= */
+
+/* Use the available screen width */
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Main application container */
+main {
+    width: 100%;
+    max-width: 1800px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: clamp(12px, 2vw, 28px);
+}
+
+/* Main dashboard workspace */
+.workspace {
+    display: grid;
+    grid-template-columns: minmax(340px, 0.85fr) minmax(0, 1.15fr);
+    gap: 24px;
+    width: 100%;
+    align-items: start;
+}
+
+/* Prevent content from overflowing its column */
+.workspace > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Keep form elements within the screen */
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+}
+
+input,
+select,
+textarea {
+    min-width: 0;
+}
+
+/* Make wide tables scroll inside their own container */
+table {
+    max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+    main {
+        padding: 18px;
+    }
+
+    .workspace {
+        gap: 18px;
+    }
+}
+
+/* Tablet and smaller laptop screens */
+@media (max-width: 1000px) {
+    .workspace {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    main {
+        padding: 16px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+    main {
+        padding: 12px;
+    }
+
+    .workspace {
+        gap: 16px;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+        width: 100%;
+    }
+}
+
+/* Very small mobile screens */
+@media (max-width: 380px) {
+    main {
+        padding: 8px;
+    }
+
+    .workspace {
+        gap: 12px;
+    }
+}
