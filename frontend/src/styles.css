@@ -208,3 +208,174 @@
         margin-top: 8px;
     }
 }
+
+/* =========================================
+   CLEARCREDIT - FINAL COMPONENT ALIGNMENT
+========================================= */
+
+@media (min-width: 901px) {
+
+    /* Consistent page width */
+    .hero,
+    .workspace,
+    footer {
+        width: calc(100% - 64px);
+        max-width: 1320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Equal-width dashboard columns */
+    .workspace {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    /* Consistent card positioning */
+    .workspace > .card {
+        width: 100%;
+        min-width: 0;
+        height: 100%;
+        margin: 0;
+        align-self: stretch;
+    }
+
+    .card-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 48px;
+        margin-bottom: 15px;
+        padding-bottom: 13px;
+    }
+
+    .card-heading > div {
+        align-items: center;
+    }
+
+    /* Consistent form field alignment */
+    .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: end;
+        column-gap: 14px;
+        row-gap: 12px;
+    }
+
+    .form-grid > *,
+    .select-grid > * {
+        min-width: 0;
+    }
+
+    .select-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: end;
+        gap: 10px;
+    }
+
+    .field {
+        min-width: 0;
+    }
+
+    .field > span {
+        min-height: 14px;
+        line-height: 1.3;
+    }
+
+    .input-wrap,
+    .select-grid select,
+    .reviewer-field input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Consistent decision controls */
+    .condition-toggle button,
+    .decision-toggle button {
+        min-height: 36px;
+    }
+
+    .review-inputs,
+    .review-final {
+        width: 100%;
+    }
+
+    .confidence {
+        width: 100%;
+    }
+
+    .confidence input[type="range"] {
+        width: calc(100% - 48px);
+    }
+
+    /* Result panel alignment */
+    .result-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .decision {
+        width: 100%;
+        min-height: 96px;
+        align-items: center;
+    }
+
+    .summary {
+        align-items: flex-start;
+    }
+
+    .reliability-values {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .driver {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .driver-main {
+        min-width: 0;
+    }
+
+    /* Footer aligned with dashboard */
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 521px) and (max-width: 900px) {
+    .workspace {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .select-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Small screens */
+@media (max-width: 520px) {
+    .form-grid,
+    .select-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .workspace {
+        gap: 14px;
+    }
+
+    footer {
+        gap: 8px;
+    }
+}
