@@ -378,4 +378,72 @@
     footer {
         gap: 8px;
     }
+   
+/* =========================================
+   CLEARCREDIT - FIX CENTERED NARROW DASHBOARD
+========================================= */
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+.app {
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    margin: 0;
+}
+
+@media (min-width: 901px) {
+    .hero,
+    .workspace,
+    footer {
+        width: calc(100% - 80px);
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero {
+        padding-top: 22px;
+        padding-bottom: 20px;
+    }
+
+    .workspace {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 22px;
+        align-items: stretch;
+    }
+
+    .workspace > .card {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    footer {
+        margin-top: 18px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero,
+    .workspace,
+    footer {
+        width: calc(100% - 32px);
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 }
