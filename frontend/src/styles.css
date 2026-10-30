@@ -680,3 +680,498 @@ footer {
     }
 }
 
+
+/* =====================================================
+   CLEARCREDIT — PREMIUM READABLE & INTERACTIVE THEME
+   Preserve existing layout and design identity
+===================================================== */
+
+:root {
+    font-size: 17px !important;
+    color: #173d35;
+    background: #f0f5f1;
+    scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    height: auto !important;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    background: #f0f5f1;
+    color: #203b32;
+    font-size: 17px !important;
+}
+
+.app,
+.workspace,
+.workspace > .card,
+.result-content,
+footer {
+    height: auto !important;
+    min-height: 0;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* PAGE WIDTH */
+.hero,
+.workspace,
+.metric-cards,
+.chart-card,
+.metric-detail-grid,
+footer {
+    width: 94% !important;
+    max-width: 1700px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.hero {
+    padding-top: 35px !important;
+    padding-bottom: 30px !important;
+}
+
+.workspace {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 24px !important;
+    align-items: stretch;
+}
+
+/* PREMIUM CARD APPEARANCE */
+.card {
+    background: #ffffff;
+    border: 1px solid #dce9e1;
+    border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(23, 61, 53, 0.07);
+    padding: 30px !important;
+    transition: box-shadow .25s ease, border-color .25s ease;
+}
+
+.card:hover {
+    border-color: #a9d2bd;
+    box-shadow: 0 12px 34px rgba(23, 61, 53, 0.11);
+}
+
+/* LARGE MAIN HEADING */
+.hero h1 {
+    font-size: clamp(48px, 4vw, 66px) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -2px !important;
+    margin: 14px 0 18px !important;
+    color: #173d35;
+}
+
+.hero h1 em {
+    color: #27866c !important;
+}
+
+.hero p {
+    font-size: 19px !important;
+    line-height: 1.7 !important;
+    max-width: 700px;
+    color: #5c7168;
+}
+
+.eyebrow {
+    font-size: 14px !important;
+    letter-spacing: 1.6px;
+}
+
+/* NAVIGATION */
+nav {
+    min-height: 72px;
+    height: auto;
+    padding: 12px 4%;
+    background: #ffffff;
+}
+
+.brand {
+    font-size: 25px !important;
+}
+
+.nav-meta,
+.nav-link {
+    font-size: 13px !important;
+}
+
+/* CARD HEADINGS */
+.card-heading {
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+}
+
+.card-heading h2 {
+    font-size: 24px !important;
+    color: #173d35;
+}
+
+.card-heading p {
+    font-size: 16px !important;
+    line-height: 1.5;
+    color: #71847a;
+}
+
+.step {
+    font-size: 14px !important;
+    height: auto;
+    padding: 8px 10px;
+}
+
+/* FORM LABELS */
+.field > span {
+    font-size: 15px !important;
+    letter-spacing: .7px;
+    font-weight: 600;
+    color: #49665a;
+    margin-bottom: 10px;
+}
+
+.form-grid {
+    gap: 21px 17px;
+}
+
+.input-wrap,
+.select-grid select,
+.reviewer-field input {
+    height: 54px !important;
+    border-radius: 9px;
+    border: 1px solid #cbded2;
+    background: #f9fcfa;
+}
+
+.input-wrap input,
+.input-wrap b,
+.select-grid select,
+.reviewer-field input {
+    font-size: 19px !important;
+    color: #203e33;
+}
+
+.select-grid {
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.select-grid select {
+    padding: 0 13px;
+}
+
+/* INTERACTIVE FORM FOCUS */
+.input-wrap,
+select,
+.reviewer-field input,
+button {
+    transition: all .2s ease;
+}
+
+.input-wrap:focus-within,
+select:focus,
+.reviewer-field input:focus {
+    border-color: #329875 !important;
+    outline: 4px solid rgba(50, 152, 117, .13) !important;
+    background: #ffffff;
+}
+
+/* BUTTONS */
+.primary {
+    min-height: 54px;
+    height: auto;
+    border-radius: 9px;
+    background: linear-gradient(110deg, #174b3d, #238368);
+    font-size: 19px !important;
+    font-weight: 700;
+    letter-spacing: .2px;
+    box-shadow: 0 5px 13px rgba(23, 75, 61, .15);
+}
+
+.primary:hover {
+    background: linear-gradient(110deg, #216b53, #2da27e);
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(23, 75, 61, .2);
+}
+
+.primary:active {
+    transform: scale(.985);
+}
+
+.secondary,
+.condition-toggle button,
+.decision-toggle button {
+    min-height: 48px;
+    border-radius: 9px;
+    font-size: 16px !important;
+    font-weight: 600;
+}
+
+.secondary:hover,
+.condition-toggle button:hover,
+.decision-toggle button:hover {
+    border-color: #329875;
+    background: #eaf6ef;
+    color: #17674e;
+}
+
+/* AI DECISION */
+.decision {
+    padding: 25px !important;
+    border-radius: 12px;
+}
+
+.decision-label {
+    font-size: 14px !important;
+}
+
+.decision h3 {
+    font-size: 34px !important;
+    line-height: 1.25;
+    letter-spacing: -.6px;
+}
+
+.decision p {
+    font-size: 17px !important;
+    line-height: 1.5;
+}
+
+.score-ring {
+    width: 88px;
+    height: 88px;
+}
+
+.score-ring strong {
+    font-size: 24px !important;
+}
+
+.summary {
+    font-size: 17px !important;
+    line-height: 1.7;
+    color: #526c60;
+    padding: 20px 0;
+}
+
+/* SECTION HEADINGS */
+.section-title {
+    margin: 25px 0 17px;
+}
+
+.section-title span {
+    font-size: 18px !important;
+    color: #234b3d;
+}
+
+.section-title small {
+    font-size: 12px !important;
+}
+
+/* EXPLANATION DRIVERS */
+.driver {
+    margin: 18px 0;
+    gap: 13px;
+}
+
+.driver-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+}
+
+.driver-main > div:first-child {
+    font-size: 17px !important;
+    margin-bottom: 9px;
+}
+
+.driver-main span {
+    font-size: 15px !important;
+}
+
+.bar {
+    height: 7px;
+    border-radius: 8px;
+}
+
+.positive-text,
+.negative-text {
+    font-size: 16px !important;
+}
+
+/* RELIABILITY AND EXPLANATIONS */
+.reliability-values {
+    gap: 12px;
+}
+
+.reliability-values span {
+    font-size: 16px !important;
+    padding: 14px;
+    border-radius: 9px;
+}
+
+.reliability-values b {
+    font-size: 15px !important;
+}
+
+.counterfactual {
+    padding: 15px;
+    border-radius: 10px;
+    transition: background .2s ease, border-color .2s ease;
+}
+
+.counterfactual:hover {
+    background: #f0f8f3;
+    border-color: #a9d2bd;
+}
+
+.counterfactual-change {
+    font-size: 16px !important;
+    line-height: 1.55;
+}
+
+.counterfactual > b {
+    font-size: 15px !important;
+}
+
+.compliance p {
+    font-size: 15px !important;
+    line-height: 1.65;
+}
+
+/* STUDY AND REVIEW TEXT */
+.study-protocol > p {
+    font-size: 16px !important;
+    line-height: 1.7;
+}
+
+.confidence > span {
+    font-size: 16px !important;
+}
+
+.confidence > b {
+    font-size: 17px !important;
+}
+
+/* DASHBOARD METRICS */
+.metric-card {
+    border-radius: 12px;
+    padding: 24px !important;
+}
+
+.metric-card span {
+    font-size: 14px !important;
+}
+
+.metric-card strong {
+    font-size: 34px !important;
+}
+
+.metric-detail h3 {
+    font-size: 20px !important;
+}
+
+.metric-detail p,
+.metric-detail dl {
+    font-size: 15px !important;
+}
+
+/* EMPTY STATE */
+.empty h3 {
+    font-size: 25px !important;
+}
+
+.empty p {
+    font-size: 17px !important;
+    line-height: 1.7;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 35px !important;
+    margin-bottom: 25px !important;
+    padding: 20px 0 !important;
+    font-size: 13px !important;
+}
+
+/* SMOOTH INTERACTIVE FEEDBACK */
+button,
+a,
+.nav-link,
+.card {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #45a982;
+    outline-offset: 3px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .hero,
+    .workspace,
+    .metric-cards,
+    .chart-card,
+    .metric-detail-grid,
+    footer {
+        width: calc(100% - 32px) !important;
+    }
+
+    .workspace {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .hero {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 48px !important;
+    }
+
+    .metric-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 520px) {
+    body {
+        font-size: 16px !important;
+    }
+
+    .hero h1 {
+        font-size: 39px !important;
+    }
+
+    .hero p {
+        font-size: 16px !important;
+    }
+
+    .card {
+        padding: 19px !important;
+    }
+
+    .form-grid,
+    .select-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .metric-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .decision h3 {
+        font-size: 27px !important;
+    }
+
+    .nav-meta {
+        font-size: 0 !important;
+    }
+}
+
+
