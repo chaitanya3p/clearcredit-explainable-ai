@@ -424,4 +424,205 @@
     }
 }
 
+/* =========================================
+   CLEARCREDIT - LARGE READABLE TYPOGRAPHY
+========================================= */
+
+@media (min-width: 901px) {
+
+    /* Main heading */
+    .hero h1 {
+        font-size: 58px !important;
+        line-height: 1.08;
+        letter-spacing: -1.8px;
+    }
+
+    .hero p {
+        font-size: 18px !important;
+        line-height: 1.6;
+    }
+
+    .eyebrow {
+        font-size: 14px !important;
+    }
+
+    /* Navigation and branding */
+    .brand {
+        font-size: 24px !important;
+    }
+
+    .nav-meta,
+    .nav-link {
+        font-size: 13px !important;
+    }
+
+    /* Card headings */
+    .card-heading h2 {
+        font-size: 23px !important;
+    }
+
+    .card-heading p {
+        font-size: 15px !important;
+    }
+
+    .step {
+        font-size: 13px !important;
+    }
+
+    /* Form labels and values */
+    .field > span {
+        font-size: 15px !important;
+        margin-bottom: 9px;
+    }
+
+    .input-wrap input,
+    .input-wrap b,
+    .select-grid select,
+    .reviewer-field input {
+        font-size: 18px !important;
+    }
+
+    .input-wrap,
+    .select-grid select,
+    .reviewer-field input {
+        height: 49px;
+    }
+
+    /* Review controls */
+    .section-title span {
+        font-size: 17px !important;
+    }
+
+    .section-title small {
+        font-size: 12px !important;
+    }
+
+    .condition-toggle button,
+    .decision-toggle button,
+    .secondary {
+        font-size: 16px !important;
+        min-height: 46px;
+    }
+
+    .study-protocol > p {
+        font-size: 16px !important;
+        line-height: 1.6;
+    }
+
+    .reviewer-field {
+        margin-top: 15px;
+    }
+
+    .confidence > span {
+        font-size: 15px !important;
+    }
+
+    .confidence > b {
+        font-size: 16px !important;
+    }
+
+    .primary {
+        font-size: 17px !important;
+        height: 50px;
+    }
+
+    /* AI decision */
+    .decision-label {
+        font-size: 14px !important;
+    }
+
+    .decision h3 {
+        font-size: 32px !important;
+    }
+
+    .decision p {
+        font-size: 16px !important;
+    }
+
+    .score-ring strong {
+        font-size: 23px !important;
+    }
+
+    .summary {
+        font-size: 16px !important;
+        line-height: 1.6;
+    }
+
+    /* Local explanation drivers */
+    .driver-main > div:first-child {
+        font-size: 15px !important;
+    }
+
+    .driver-main span {
+        font-size: 14px !important;
+    }
+
+    .positive-text,
+    .negative-text {
+        font-size: 15px !important;
+    }
+
+    /* Reliability and counterfactuals */
+    .reliability-values span {
+        font-size: 15px !important;
+    }
+
+    .reliability-values b {
+        font-size: 15px !important;
+    }
+
+    .counterfactual-change {
+        font-size: 15px !important;
+        line-height: 1.5;
+    }
+
+    .counterfactual > b {
+        font-size: 15px !important;
+    }
+
+    .compliance p {
+        font-size: 14px !important;
+        line-height: 1.55;
+    }
+
+    .empty h3 {
+        font-size: 23px !important;
+    }
+
+    .empty p {
+        font-size: 17px !important;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 12px !important;
+    }
+}
+
+/* Smaller desktop height: retain readable text */
+@media (min-width: 901px) and (max-height: 800px) {
+    .hero h1 {
+        font-size: 48px !important;
+    }
+
+    .hero p {
+        font-size: 16px !important;
+    }
+
+    .card-heading h2 {
+        font-size: 20px !important;
+    }
+
+    .field > span {
+        font-size: 13px !important;
+    }
+
+    .input-wrap input,
+    .input-wrap b,
+    .select-grid select,
+    .reviewer-field input {
+        font-size: 16px !important;
+    }
+}
+
 
