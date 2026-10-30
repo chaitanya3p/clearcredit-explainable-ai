@@ -8,11 +8,10 @@
 .record-actions{display:flex;gap:8px;margin-top:9px}.record-actions .secondary{margin-top:0;flex:1}.fairness-table{display:grid;gap:9px}.fairness-row{display:grid;grid-template-columns:1fr 1fr 1fr 1.2fr;gap:10px;align-items:center;border:1px solid #e4ece7;border-radius:8px;padding:12px;font-size:11px}.fairness-row span,.fairness-row small{color:#899690}.fairness-row b{color:#2d8068;font:500 11px 'DM Mono',monospace}.fairness-flag{margin:12px 0 0;padding:10px;background:#fff5e5;border:1px solid #f1d9ad;border-radius:7px;color:#946d36;font-size:11px}.proxy-row{display:flex;justify-content:space-between;border-bottom:1px solid #edf0ed;padding:10px 0;margin:0;color:#62766e;font-size:11px}.proxy-row span{font-family:'DM Mono',monospace;color:#2d8068}@media(max-width:520px){.record-actions{display:block}.record-actions .secondary{margin-top:8px}.fairness-row{grid-template-columns:1fr 1fr}}
 
 /* =========================================
-   CLEARCREDIT - SCREEN FIT / RESPONSIVENESS
-   Preserve existing colours and styling
+   CLEARCREDIT - FULL SCREEN LAYOUT
+   Existing colours, fonts and design preserved
 ========================================= */
 
-/* Use the available screen width */
 html,
 body,
 #root {
@@ -25,96 +24,166 @@ body,
     box-sizing: border-box;
 }
 
-/* Main application container */
-main {
-    width: 100%;
-    max-width: 1800px;
-    min-height: 100vh;
-    margin: 0 auto;
-    padding: clamp(12px, 2vw, 28px);
+body {
+    overflow-x: hidden;
 }
 
-/* Main dashboard workspace */
-.workspace {
-    display: grid;
-    grid-template-columns: minmax(340px, 0.85fr) minmax(0, 1.15fr);
-    gap: 24px;
+.app {
     width: 100%;
+    min-height: 100vh;
+}
+
+/* Use the available screen width */
+.hero,
+.workspace,
+footer,
+.metric-cards,
+.chart-card,
+.metric-detail-grid {
+    width: calc(100% - 64px);
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Reduce unnecessary top and bottom spacing */
+.hero {
+    padding-top: clamp(24px, 4vh, 48px);
+    padding-bottom: clamp(20px, 3vh, 36px);
+}
+
+/* Main two-column dashboard */
+.workspace {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: clamp(14px, 1.5vw, 24px);
     align-items: start;
 }
 
-/* Prevent content from overflowing its column */
-.workspace > * {
+/* Keep cards inside the available width */
+.card {
     min-width: 0;
     max-width: 100%;
+    padding: clamp(18px, 1.8vw, 27px);
 }
 
-/* Keep form elements within the screen */
+.workspace > * {
+    min-width: 0;
+}
+
+/* Dashboard metrics */
+.metric-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(12px, 1.5vw, 20px);
+}
+
+.metric-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(12px, 1.5vw, 20px);
+}
+
+/* Keep footer aligned with dashboard */
+footer {
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+
+/* Prevent horizontal overflow */
 input,
 select,
 textarea,
-button {
+button,
+.card,
+.metric-card {
     max-width: 100%;
 }
 
-input,
-select,
-textarea {
+.result-content {
     min-width: 0;
+    overflow-wrap: anywhere;
 }
 
-/* Make wide tables scroll inside their own container */
-table {
-    max-width: 100%;
-}
-
-@media (max-width: 1200px) {
-    main {
-        padding: 18px;
+/* Laptop screens */
+@media (max-width: 1100px) {
+    .hero,
+    .workspace,
+    footer,
+    .metric-cards,
+    .chart-card,
+    .metric-detail-grid {
+        width: calc(100% - 40px);
     }
 
     .workspace {
-        gap: 18px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 4.5vw, 48px);
     }
 }
 
-/* Tablet and smaller laptop screens */
-@media (max-width: 1000px) {
+/* Tablet screens */
+@media (max-width: 900px) {
+    .hero,
+    .workspace,
+    footer,
+    .metric-cards,
+    .chart-card,
+    .metric-detail-grid {
+        width: calc(100% - 32px);
+    }
+
     .workspace {
         grid-template-columns: minmax(0, 1fr);
-        gap: 20px;
     }
 
-    main {
-        padding: 16px;
+    .metric-detail-grid {
+        grid-template-columns: 1fr;
     }
 }
 
 /* Mobile screens */
-@media (max-width: 600px) {
-    main {
-        padding: 12px;
+@media (max-width: 520px) {
+    .hero,
+    .workspace,
+    footer,
+    .metric-cards,
+    .chart-card,
+    .metric-detail-grid {
+        width: calc(100% - 24px);
     }
 
-    .workspace {
-        gap: 16px;
+    .hero {
+        padding-top: 28px;
+        padding-bottom: 22px;
     }
 
-    input,
-    select,
-    textarea,
-    button {
-        width: 100%;
-    }
-}
-
-/* Very small mobile screens */
-@media (max-width: 380px) {
-    main {
-        padding: 8px;
+    .hero h1 {
+        font-size: 38px;
+        letter-spacing: -1.8px;
     }
 
-    .workspace {
-        gap: 12px;
+    .card {
+        padding: 17px;
+    }
+
+    .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .select-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .metric-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .calibration-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .fairness-row {
+        grid-template-columns: 1fr 1fr;
     }
 }
